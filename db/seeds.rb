@@ -12,10 +12,10 @@ CSV.foreach('counties.csv', csv_options) do |row|
   County.create(
     fips: row['FIPS'].to_i,
     state: State.find(row['State'].to_i),
-    state_name: row['State_name'],
     county: row['County'].to_i,
     name: row['County_name'],
     equipment_age: row['DD_equipment_age_years'].to_i,
-    paper_status: row['Paper_status']
+    paper_status: row['Paper_status'].to_sym
   )
 end
+
