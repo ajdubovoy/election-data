@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2018_10_26_223900) do
 
   create_table "counties", primary_key: "fips", force: :cascade do |t|
     t.bigint "state_id"
-    t.integer "county"
     t.string "name"
     t.integer "equipment_age"
     t.string "paper_status"
