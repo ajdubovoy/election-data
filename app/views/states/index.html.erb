@@ -1,0 +1,6 @@
+<div class="container">
+  <%= simple_form_for State.new, method: :get do |f| %>
+    <%= f.input :fips, collection: @states, label_method: :name, value_method: :fips, label: 'State' %>
+    <%= f.submit 'Search' %>
+  <% end %>
+</div>
