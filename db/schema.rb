@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_225529) do
+ActiveRecord::Schema.define(version: 2018_10_30_230049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2018_10_30_225529) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_counties_on_state_id"
+  end
+
+  create_table "machines", force: :cascade do |t|
+    t.bigint "county_id"
+    t.string "make"
+    t.string "model"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["county_id"], name: "index_machines_on_county_id"
   end
 
   create_table "states", primary_key: "fips", force: :cascade do |t|

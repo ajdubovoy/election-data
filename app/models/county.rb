@@ -1,5 +1,6 @@
 class County < ApplicationRecord
   belongs_to :state
+  has_many :machines
 
   def list_name
     return "##{self.fips} - #{self.name}"
