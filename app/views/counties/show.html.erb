@@ -43,7 +43,20 @@
       </div>
       
       <div class="infosub col-xs-10 col-xs-offset-1">
-        TODO
+
+        <% @machines.each do |machine| %>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 infohead">
+              <%= machine.model %>
+            </div>
+            <div class="col-xs-12 col-sm-6 infodesc">
+              <em><%= machine.category %></em> by <%= machine.make %>
+            </div>
+          </div>
+
+        <% end %>
+
       </div>
 
     </div>

@@ -12,5 +12,6 @@ class CountiesController < ApplicationController
   def show
     @county = County.find(params['id'].to_i)
     @state = State.find(params['state_id'].to_i)
+    @machines = @county.machines
   end
 end

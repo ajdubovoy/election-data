@@ -31,7 +31,7 @@ CSV.foreach(Rails.root.join('db', 'machines.csv'), csv_options) do |row|
   code_unedited = row['FIPS code'].to_i
   fips = ( code_unedited / 10**5 ).to_i
 
-  Machine.create!(
+  Machine.create(
     county_id: fips,
     make: row['Make'],
     model: row['Model'],
