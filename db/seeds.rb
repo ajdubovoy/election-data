@@ -10,6 +10,7 @@ CSV.foreach(Rails.root.join('db', 'states.csv'), csv_options) do |row|
   State.create!(
     fips: row['FIPS_State'].to_i,
     name: row['State'],
+    toss_up: row['Senate_Toss_Up']
   ) unless row['State'].nil?
 end
 

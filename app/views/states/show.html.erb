@@ -10,6 +10,7 @@
     <% end %>
   </div>
   <div class="info">
+
     <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
         FIPS
@@ -18,6 +19,7 @@
         <%= @state.fips %>
       </div>
     </div>
+
     <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
         Number of counties
@@ -26,4 +28,16 @@
         <%= @state.counties.length %>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 infohead">
+        Senate Toss Up?
+      </div>
+      <div class="col-xs-12 col-sm-6 infodesc">
+        <%= @state.toss_up %>
+      </div>
+    </div>
+
+  </div>
 <div>
+
