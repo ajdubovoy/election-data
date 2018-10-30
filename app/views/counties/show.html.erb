@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="header">
+    <h1><%= @state.name %></h1>
+    <h2><%= @county.name %></h2>
+  </div>
+  <%= link_to 'Back', state_path(@state), class: 'btn btn-default' %>
+  <div class="info">
+    <table>
+      <tr>
+        <td>FIPS</td>
+        <td><%= @county.fips %></td>
+      </tr>
+      <tr>
+        <td>Paper Status</td>
+        <td><%= @county.paper_status_pretty %></td>
+      </tr>
+      <tr>
+        <td>Oldest Equipment Age</td>
+        <td><%= @county.equipment_age %> years</td>
+      </tr>
+    </table>
+  </div>
+</div>

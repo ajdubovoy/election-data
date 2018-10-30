@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="header"><h1><%= @state.name %></h1></div>
+  <div class="search">
+    <%= simple_form_for [ @state, County.new(state: @state) ], method: :get do |f| %>
+      <%= f.input :fips, collection: @counties, label_method: :list_name, value_method: :fips, label: 'County', class: 'form-control' %>
+      <%= f.submit 'Search', class: 'btn btn-primary' %>
+    <% end %>
+    <%= link_to 'Back', root_path, class: 'btn btn-default' %>
+  </div>
+  <div class="info">
+    <table>
+      <tr>
+        <td>FIPS</td>
+        <td><%= @state.fips %></td>
+      </tr>
+      <tr>
+        <td>Number of counties</td>
+        <td><%= @state.counties.length %></td>
+      </tr>
+    </table>
+  </div>
+<div>

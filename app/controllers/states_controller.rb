@@ -9,5 +9,6 @@ class StatesController < ApplicationController
 
   def show
     @state = State.find(params[:id].to_i)
+    @counties = @state.counties
   end
 end
