@@ -10,15 +10,20 @@
     <% end %>
   </div>
   <div class="info">
-    <table>
-      <tr>
-        <td>FIPS</td>
-        <td><%= @state.fips %></td>
-      </tr>
-      <tr>
-        <td>Number of counties</td>
-        <td><%= @state.counties.length %></td>
-      </tr>
-    </table>
-  </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 infohead">
+        FIPS
+      </div>
+      <div class="col-xs-12 col-sm-6 infodesc">
+        <%= @state.fips %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 infohead">
+        Number of counties
+      </div>
+      <div class="col-xs-12 col-sm-6 infodesc">
+        <%= @state.counties.length %>
+      </div>
+    </div>
 <div>

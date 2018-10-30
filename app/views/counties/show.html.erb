@@ -7,19 +7,46 @@
     <h2><%= @county.name %></h2>
   </div>
   <div class="info">
-    <table>
-      <tr>
-        <td>FIPS</td>
-        <td><%= @county.fips %></td>
-      </tr>
-      <tr>
-        <td>Paper Status</td>
-        <td><%= @county.paper_status_pretty %></td>
-      </tr>
-      <tr>
-        <td>Oldest Equipment Age</td>
-        <td><%= @county.equipment_age %> years</td>
-      </tr>
-    </table>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 infohead">
+        FIPS
+      </div>
+      <div class="col-xs-12 col-sm-6 infodesc">
+        <%= @county.fips %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 infohead">
+        Paper Status
+      </div>
+      <div class="col-xs-12 col-sm-6 infodesc">
+        <%= @county.paper_status_pretty %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 infohead">
+        Oldest Equipment Age
+      </div>
+      <div class="col-xs-12 col-sm-6 infodesc">
+        <%= @county.equipment_age %> years
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 infohead infosubtitle">
+        <span>
+          Machine Information
+        </span>
+      </div>
+      
+      <div class="infosub col-xs-10 col-xs-offset-1">
+        TODO
+      </div>
+
+    </div>
+
   </div>
 </div>

@@ -1,10 +1,28 @@
 <div class="container">
-  <div class="header text-center">
-    <h1>County Election Technology Directory</h1>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="header text-center">
+        <h1>County Election Technology Directory</h1>
+      </div>
+    </div>
   </div>
-  <%= simple_form_for State.new, method: :get do |f| %>
-    <%= f.input :fips, collection: @states, label_method: :name, value_method: :fips, label: 'State', class: 'form-control' %>
-    <%= f.submit 'Search', class: 'btn btn-primary btn-block' %>
-  <% end %>
-  <%= render 'layouts/footer' %>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="search">
+        <%= simple_form_for State.new, method: :get do |f| %>
+          <%= f.input :fips, collection: @states, label_method: :name, value_method: :fips, label: 'State', class: 'form-control' %>
+          <%= f.submit 'Search', class: 'btn btn-primary btn-block' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= render 'layouts/footer' %>
+    </div>
+  </div>
+
 </div>

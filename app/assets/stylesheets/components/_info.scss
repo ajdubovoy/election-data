@@ -3,5 +3,29 @@
   border-radius: $border-radius-base;
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.01);
   padding: 10px;
+  margin-top: 15px;
+}
+
+.infohead{
+  font-size: 20px;
+  font-family: $kievit-slab;
+  font-weight: 300;
+  padding: 0 15px;
+}
+
+.infosubtitle{
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+  span{
+    border-bottom: 0.5px solid $blue;
+  }
+}
+
+.infosub{
+  background: $light-gray;
+  border-radius: $border-radius-base;
+  padding: 10px;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.025);
   margin-top: 10px;
 }
