@@ -1,9 +1,11 @@
 <div class="container">
-  <div class="header">
+  <div class="back">
+    <%= link_to 'Back', state_path(@state), class: 'btn btn-default' %>
+  </div>
+  <div class="header text-center">
     <h1><%= @state.name %></h1>
     <h2><%= @county.name %></h2>
   </div>
-  <%= link_to 'Back', state_path(@state), class: 'btn btn-default' %>
   <div class="info">
     <table>
       <tr>

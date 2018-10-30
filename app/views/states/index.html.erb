@@ -1,6 +1,10 @@
 <div class="container">
+  <div class="header text-center">
+    <h1>County Election Technology Directory</h1>
+  </div>
   <%= simple_form_for State.new, method: :get do |f| %>
     <%= f.input :fips, collection: @states, label_method: :name, value_method: :fips, label: 'State', class: 'form-control' %>
-    <%= f.submit 'Search', class: 'btn btn-primary' %>
+    <%= f.submit 'Search', class: 'btn btn-primary btn-block' %>
   <% end %>
+  <%= render 'layouts/footer' %>
 </div>
