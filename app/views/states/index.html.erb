@@ -12,7 +12,7 @@
     <div class="col-sm-12">
       <div class="search">
         <%= simple_form_for State.new, method: :get do |f| %>
-          <%= f.input :fips, collection: @states, label_method: :name, value_method: :fips, label: 'State', class: 'form-control' %>
+          <%= f.input :fips, collection: @states, label_method: :name, value_method: :fips, label: 'Select a state', class: 'form-control' %>
           <%= f.submit 'Search', class: 'btn btn-primary btn-block' %>
         <% end %>
       </div>
