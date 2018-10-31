@@ -22,7 +22,7 @@
         Paper Status
       </div>
       <div class="col-xs-12 col-sm-6 infodesc">
-        <%= @county.paper_status_pretty %>
+        <span class="<%= @county.paper_status_color %>"><%= @county.paper_status_pretty %></span>
       </div>
     </div>
 

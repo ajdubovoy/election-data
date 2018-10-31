@@ -18,7 +18,7 @@
   text-align: center;
   margin-top: 10px;
   span{
-    border-bottom: 0.5px solid $blue;
+    border-bottom: 1px solid $blue;
   }
 }
 
@@ -26,6 +26,18 @@
   background: $light-gray;
   border-radius: $border-radius-base;
   padding: 10px;
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.025);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.03);
   margin-top: 10px;
+}
+
+.good{
+  border-bottom: 1px solid $green;
+}
+
+.amb{
+  border-bottom: 1px solid $yellow;
+}
+
+.bad{
+  border-bottom: 1px solid $red;
 }

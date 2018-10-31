@@ -14,4 +14,13 @@ class County < ApplicationRecord
     else 'No data provided'
     end
   end
+
+  def paper_status_color
+    case self.paper_status
+    when 'some_paperless' then 'bad'
+    when 'vvpat_provided_not_paperless' then 'amb'
+    when 'paper_only' then 'good'
+    else 'No data provided'
+    end
+  end
 end
