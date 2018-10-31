@@ -2,15 +2,11 @@ class County < ApplicationRecord
   belongs_to :state
   has_many :machines
 
-  def list_name
-    return "##{self.fips} - #{self.name}"
-  end
-
   def paper_status_pretty
     case self.paper_status
-    when 'some_paperless' then 'Some paperless electronic ballots'
-    when 'vvpat_provided_not_paperless' then 'VVPAT is provided for all electronic ballots'
-    when 'paper_only' then 'Only paper voting, no electronic'
+    when 'some_paperless' then 'Paperless Voting'
+    when 'vvpat_provided_not_paperless' then 'Mix of Paper Ballots and Paper-Trails'
+    when 'paper_only' then 'All Paper Ballots'
     else 'No data provided'
     end
   end
@@ -21,6 +17,23 @@ class County < ApplicationRecord
     when 'vvpat_provided_not_paperless' then 'amb'
     when 'paper_only' then 'good'
     else 'No data provided'
+    end
+  end
+
+  def audit_status_pretty
+    case self.audit_status
+    when 'NotRequiredAsPaper' then 'No Required Audits / Machine-Based Audits'
+    when 'Paperless' then 'Paperless Voting'
+    when 'RequiredPaper' then 'Required Manual Audit of Paper Ballots'
+    else 'No data provided'
+    end
+  end
+
+  def audit_status_color
+    case self.audit_status
+    when 'NotRequiredAsPaper' then 'amb'
+    when 'Paperless' then 'bad'
+    when 'RequiredPaper' then 'good'
     end
   end
 end

@@ -1,6 +1,6 @@
 class StatesController < ApplicationController
   def index
-    @states = State.all
+    @states = State.all.sort
     if params["state"].present? && params["state"]["fips"].present?
       @state = State.find(params['state']['fips'].to_i)
       redirect_to state_path(@state)
@@ -9,6 +9,6 @@ class StatesController < ApplicationController
 
   def show
     @state = State.find(params[:id].to_i)
-    @counties = @state.counties
+    @counties = @state.counties.sort
   end
 end

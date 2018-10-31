@@ -5,7 +5,6 @@ class CountiesController < ApplicationController
       redirect_to state_path(@state) if params['county']['fips'].empty?
       @county = County.find(params['county']['fips'].to_i) unless params['county']['fips'].empty?
       redirect_to state_county_path(@county, state_id: @state.fips) unless params['county']['fips'].empty?
-
     end
   end
 

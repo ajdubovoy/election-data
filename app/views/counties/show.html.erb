@@ -3,8 +3,8 @@
     <%= link_to 'Back', state_path(@state), class: 'btn btn-default' %>
   </div>
   <div class="header text-center">
-    <h1><%= @state.name %></h1>
-    <h2><%= @county.name %></h2>
+    <h1><%= "#{@county.name}, #{@state.abbreviation}" %></h1>
+    <span class="subtitle"><strong>FIPS: </strong><%= @county.fips %></span>
   </div>
   <div class="info">
 
@@ -18,19 +18,19 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
-        FIPS
+        Paper Status
       </div>
       <div class="col-xs-12 col-sm-6 infodesc">
-        <%= @county.fips %>
+        <span class="<%= @county.paper_status_color %>"><%= @county.paper_status_pretty %></span>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
-        Paper Status
+        Audit Status
       </div>
       <div class="col-xs-12 col-sm-6 infodesc">
-        <span class="<%= @county.paper_status_color %>"><%= @county.paper_status_pretty %></span>
+        <span class="<%= @county.audit_status_color %>"><%= @county.audit_status_pretty %></span>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-xs-12 infohead infosubtitle">
         <span>
-          Machine Information
+          Voting Machines
         </span>
       </div>
       
