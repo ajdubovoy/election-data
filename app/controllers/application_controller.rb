@@ -5,8 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_everything
     authenticate_or_request_with_http_basic("TrustTheVote") do |user, password|
-      pass = Settings.admin_password
-      pass.present? && user == 'trustthevote' && password == 'mid18term'
+      username == 'trustthevote' && password == 'mid18term'
     end
   end
 end

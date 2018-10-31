@@ -9,6 +9,14 @@
   <div class="info">
 
     <div class="row">
+      <div class="col-xs-12 infohead infosubtitle">
+        <span>
+          Information about County
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
         FIPS
       </div>
@@ -28,10 +36,10 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
-        Oldest Equipment Age
+        Equipment Age
       </div>
       <div class="col-xs-12 col-sm-6 infodesc">
-        <%= @county.equipment_age %> years
+        Up to <%= @county.equipment_age %> years
       </div>
     </div>
 
