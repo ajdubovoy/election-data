@@ -49,5 +49,5 @@ CSV.foreach(Rails.root.join('db', 'machines.csv'), csv_options) do |row|
     make: row['Make'],
     model: row['Model'],
     category: row['Equipment Type']
-  )
+  ) unless Machine.exists?(county_id: fips, model: row['Model'])
 end
