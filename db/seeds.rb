@@ -19,6 +19,7 @@ CSV.foreach(Rails.root.join('db', 'states.csv'), csv_options) do |row|
   County.create!(
     fips: row['FIPS_State'].to_i,
     name: "State of " + row['State'],
+    state_id: row['State'].to_i
   )
 end
 
