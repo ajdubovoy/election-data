@@ -4,7 +4,7 @@ class County < ApplicationRecord
 
   def paper_status_pretty
     case self.paper_status
-    when 'some_paperless' then 'Paperless Voting'
+    when 'some_paperless' then 'Mix of Paperless Voting and Paper Optical Scan'
     when 'vvpat_provided_not_paperless' then 'Mix of Paper Ballots and Paper-Trails'
     when 'paper_only' then 'All Paper Ballots'
     else 'No data provided'
