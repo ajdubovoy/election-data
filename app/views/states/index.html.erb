@@ -13,7 +13,7 @@
       <div class="search">
         <%= simple_form_for State.new, method: :get do |f| %>
           <%= f.input :fips, collection: @states, label_method: :name, value_method: :fips, label: 'Select a state', class: 'form-control' %>
-          <%= f.submit 'Search', class: 'btn btn-primary btn-block' %>
+          <%= f.submit 'Select', class: 'btn btn-primary btn-block' %>
         <% end %>
       </div>
     </div>

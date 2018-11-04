@@ -3,103 +3,147 @@
     <%= link_to 'Back', state_path(@state), class: 'btn btn-default' %>
   </div>
   <div class="header text-center">
-    <h1><%= "#{@county.name}, #{@state.abbreviation}" %></h1>
+    <h1><%= @county.fips.to_s.slice(-3, 3) == '000' ? @county.name : "#{@county.name}, #{@state.abbreviation}" %></h1>
     <span class="subtitle"><strong>FIPS: </strong><%= @county.fips %></span>
   </div>
+
+  <% unless @county.fips.to_s.slice(-3, 3) == '000' %>
+    <div class="info">
+
+      <div class="row">
+        <div class="col-xs-12 infohead infosubtitle">
+          <span>
+            Information about County
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 infohead">
+          Population
+        </div>
+        <div class="col-xs-12 col-sm-6 infodesc">
+          <%= @county.population %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 infohead">
+          Population Quartile
+        </div>
+        <div class="col-xs-12 col-sm-6 infodesc">
+          <%= @county.population_quartile %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 infohead">
+          Paper Status
+        </div>
+        <div class="col-xs-12 col-sm-6 infodesc">
+          <span class="<%= @county.paper_status_color %>"><%= @county.paper_status_pretty %></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 infohead">
+          Audit Status
+        </div>
+        <div class="col-xs-12 col-sm-6 infodesc">
+          <span class="<%= @state.audit_status_color %>"><%= @state.audit_status_pretty %></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 infohead">
+          Equipment Age
+        </div>
+        <div class="col-xs-12 col-sm-6 infodesc">
+          Up to <%= @county.equipment_age %> years
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 infohead infosubtitle">
+          <span>
+            Voting Machines
+          </span>
+        </div>
+        
+        <div class="infosub col-xs-10 col-xs-offset-1">
+
+          <% if @machines.length == 0 %>
+            <div class="row">
+              <div class="col-sx-12 text-center infodesc">
+                <em>No machine data available</em>
+              </div>
+            </div>
+
+          <% else %>
+
+            <% @machines.each do |machine| %>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 infohead">
+                  <%= machine.model %>
+                </div>
+                <div class="col-xs-12 col-sm-6 infodesc">
+                  <strong>Make:</strong> <%= machine.make %>
+                </div>
+                <div class="col-xs-12 col-sm-6 infodesc">
+                  <strong>Type:</strong> <em><%= machine.category %></em>
+                </div>
+              </div>
+
+            <% end %>
+
+          <% end %>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  <% end %>
+
   <div class="info">
 
     <div class="row">
       <div class="col-xs-12 infohead infosubtitle">
         <span>
-          Information about County
+          Information about State
         </span>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
-        Population
+        FIPS
       </div>
       <div class="col-xs-12 col-sm-6 infodesc">
-        <%= @county.population %>
+        <%= @state.fips %>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
-        Population Quartile
+        Number of counties
       </div>
       <div class="col-xs-12 col-sm-6 infodesc">
-        <%= @county.population_quartile %>
+        <%= @state.counties.length %>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-sm-6 infohead">
-        Paper Status
+        Senate Toss Up?
       </div>
       <div class="col-xs-12 col-sm-6 infodesc">
-        <span class="<%= @county.paper_status_color %>"><%= @county.paper_status_pretty %></span>
+        <%= @state.toss_up %>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 infohead">
-        Audit Status
-      </div>
-      <div class="col-xs-12 col-sm-6 infodesc">
-        <span class="<%= @state.audit_status_color %>"><%= @state.audit_status_pretty %></span>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 infohead">
-        Equipment Age
-      </div>
-      <div class="col-xs-12 col-sm-6 infodesc">
-        Up to <%= @county.equipment_age %> years
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12 infohead infosubtitle">
-        <span>
-          Voting Machines
-        </span>
-      </div>
-      
-      <div class="infosub col-xs-10 col-xs-offset-1">
-
-        <% if @machines.length == 0 %>
-          <div class="row">
-            <div class="col-sx-12 text-center infodesc">
-              <em>No machine data available</em>
-            </div>
-          </div>
-
-        <% else %>
-
-          <% @machines.each do |machine| %>
-
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 infohead">
-                <%= machine.model %>
-              </div>
-              <div class="col-xs-12 col-sm-6 infodesc">
-                <strong>Make:</strong> <%= machine.make %>
-              </div>
-              <div class="col-xs-12 col-sm-6 infodesc">
-                <strong>Type:</strong> <em><%= machine.category %></em>
-              </div>
-            </div>
-
-          <% end %>
-
-        <% end %>
-
-      </div>
-
     </div>
 
   </div>
+
 </div>

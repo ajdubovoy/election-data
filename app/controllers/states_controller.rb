@@ -9,6 +9,6 @@ class StatesController < ApplicationController
 
   def show
     @state = State.find(params[:id].to_i)
-    @counties = @state.counties.sort_by { |county| county.name }
+    @counties = @state.counties.sort
   end
 end

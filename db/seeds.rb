@@ -15,12 +15,15 @@ CSV.foreach(Rails.root.join('db', 'states.csv'), csv_options) do |row|
     abbreviation: row['Abbreviation'],
     audit_status: row['NCSL_Audit_Composite'].to_sym,
   ) unless row['State'].nil?
+end
 
+puts 'Seeding state county show all entries...'
+State.all.each do |state|
   County.create!(
-    fips: row['FIPS_State'].to_i,
-    name: "State of " + row['State'],
-    state_id: row['State'].to_i
-  ) unless row['State'].nil?
+    fips: state.fips * 10**3,
+    name: "State of " + state.name,
+    state_id: state.fips
+  )
 end
 
 puts 'Seeding counties...'
