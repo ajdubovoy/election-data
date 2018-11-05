@@ -3,7 +3,7 @@
     <%= link_to 'Back', state_path(@state), class: 'btn btn-default' %>
   </div>
   <div class="header text-center">
-    <h1><%= @county.fips.to_s.slice(-3, 3) == '000' ? @county.name : "#{@county.name}, #{@state.abbreviation}" %></h1>
+    <h1><%= @county.fips.to_s.slice(-3, 3) == '000' ? @county.name.slice(2,@county.name.length - 2) : "#{@county.name}, #{@state.abbreviation}" %></h1>
     <span class="subtitle"><strong>FIPS: </strong><%= @county.fips %></span>
   </div>
 

@@ -21,7 +21,7 @@ puts 'Seeding state county show all entries...'
 State.all.each do |state|
   County.create!(
     fips: state.fips * 10**3,
-    name: "State of " + state.name,
+    name: "* State of " + state.name,
     state_id: state.fips
   )
 end
