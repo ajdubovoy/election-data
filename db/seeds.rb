@@ -14,7 +14,8 @@ CSV.foreach(Rails.root.join('db', 'states.csv'), csv_options) do |row|
     toss_up: row['Senate_Toss_Up'],
     abbreviation: row['Abbreviation'],
     audit_status: row['NCSL_Audit_Composite'].to_sym,
-    hava: row['DD_2018_County_Average_HAVA_Csecurity_Funds_Quartile']
+    hava: row['DD_2018_County_Average_HAVA_Csecurity_Funds_Quartile'].to_i,
+    population: row['Total_Pop_2016'].to_i
   ) unless row['State'].nil?
 end
 
