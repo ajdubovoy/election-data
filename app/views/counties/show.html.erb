@@ -52,7 +52,7 @@
           Equipment Age
         </div>
         <div class="col-xs-12 col-sm-6 infodesc">
-          Up to <%= @county.equipment_age %> years
+          <%= @machines.length == 0 ? "Age not provided" : "Up to #{ @county.equipment_age } years" %>
         </div>
       </div>
 
