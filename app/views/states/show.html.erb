@@ -8,7 +8,7 @@
   </div>
   <div class="search">
     <%= simple_form_for [ @state, County.new(state: @state) ], method: :get do |f| %>
-      <%= f.input :fips, collection: @counties, label_method: :name, value_method: :fips, label: "Select a county in #{@state.name}", class: 'form-control' %>
+      <%= f.input :fips, collection: @counties, selected: @counties.first, label_method: :name, value_method: :fips, label: "Select a county in #{@state.name}", class: 'form-control' %>
       <%= f.submit 'Select', class: 'btn btn-primary btn-block' %>
     <% end %>
   </div>
