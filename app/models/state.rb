@@ -17,4 +17,20 @@ class State < ApplicationRecord
     when 'RequiredPaper' then 'good'
     end
   end
+
+  def toss_up_pretty
+    case self.toss_up
+    when 'Y' then 'Yes'
+    when 'N' then 'No'
+    when 'L' then 'Lean'
+    end
+  end
+
+  def toss_up_color
+    case self.toss_up
+    when 'Y' then 'good'
+    when 'L' then 'amb'
+    when 'N' then 'bad'
+    end
+  end
 end

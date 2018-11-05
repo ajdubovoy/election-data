@@ -40,6 +40,15 @@
 
       <div class="row">
         <div class="col-xs-12 col-sm-6 infohead">
+          Toss Up House?
+        </div>
+        <div class="col-xs-12 col-sm-6 infodesc">
+          <span class="<%= @county.toss_up_color %>"><%= @county.toss_up_pretty %></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 infohead">
           Audit Status
         </div>
         <div class="col-xs-12 col-sm-6 infodesc">
@@ -122,7 +131,7 @@
             Senate Toss Up?
           </div>
           <div class="col-xs-12 col-sm-6 infodesc">
-            <%= @state.toss_up %>
+            <span class="<%= @state.toss_up_color %>"><%= @state.toss_up_pretty %></span>
           </div>
       
         </div>
