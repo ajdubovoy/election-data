@@ -43,4 +43,13 @@ class State < ApplicationRecord
     when 4 then 'bad'
     end
   end
+
+  def security_score_color
+    case self.security_score
+    when 1 then 'good'
+    when 2 then 'amb'
+    when 3 then 'amb'
+    when 4 then 'bad'
+    end
+  end
 end
