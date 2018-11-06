@@ -66,4 +66,18 @@ class State < ApplicationRecord
     when false then 'amb'
     end
   end
+
+  def dhs_assessment_pretty
+    case self.dhs_assessment
+    when true then 'Yes'
+    when false then 'No'
+    end
+  end
+
+  def dhs_assessment_color
+    case self.dhs_assessment
+    when true then 'good'
+    when false then 'amb'
+    end
+  end
 end

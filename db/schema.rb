@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_032813) do
+ActiveRecord::Schema.define(version: 2018_11_06_051746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_032813) do
     t.integer "population"
     t.integer "security_score"
     t.boolean "online_registration"
+    t.boolean "dhs_assessment"
   end
 
 end
