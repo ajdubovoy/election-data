@@ -39,31 +39,33 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-12 col-sm-6 infohead">
-          Paper Status
+        <div class="col-xs-12 infohead infosubtitle">
+          <span>
+            Ballot Security
+          </span>
         </div>
-        <div class="col-xs-12 col-sm-6 infodesc">
-          <span class="<%= @county.paper_status_color %>"><%= @county.paper_status_pretty %></span>
-        </div>
-      </div>
+        
+        <div class="infosub col-xs-10 col-xs-offset-1">
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 infohead">
-          Audit Status
-        </div>
-        <div class="col-xs-12 col-sm-6 infodesc">
-          <span class="<%= @state.audit_status_color %>"><%= @state.audit_status_pretty %></span>
-        </div>
-      </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 infohead">
+              Paper Status
+            </div>
+            <div class="col-xs-12 col-sm-6 infodesc">
+              <span class="<%= @county.paper_status_color %>"><%= @county.paper_status_pretty %></span>
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 infohead">
-          Equipment Age
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 infohead">
+              Audit Status
+            </div>
+            <div class="col-xs-12 col-sm-6 infodesc">
+              <span class="<%= @state.audit_status_color %>"><%= @state.audit_status_pretty %></span>
+            </div>
+          </div>
+
         </div>
-        <div class="col-xs-12 col-sm-6 infodesc">
-          <%= @machines.length == 0 ? "Age not provided" : "Up to #{ @county.equipment_age } years" %>
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-xs-12 infohead infosubtitle">
@@ -82,6 +84,17 @@
             </div>
 
           <% else %>
+
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 infohead">
+                Equipment Age
+              </div>
+              <div class="col-xs-12 col-sm-6 infodesc">
+                <%= "Up to #{ @county.equipment_age } years" %>
+              </div>
+            </div>
+
+            <hr>
 
             <% @machines.each do |machine| %>
 
