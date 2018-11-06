@@ -123,4 +123,12 @@ class State < ApplicationRecord
     when 'PhotoID' then 'Photo ID Required'
     end
   end
+
+  def poll_book_pretty
+    case self.poll_book
+    when 'N' then 'None'
+    when 'P' then 'Some Counties'
+    when 'A' then 'Statewide'
+    end
+  end
 end
