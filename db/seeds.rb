@@ -24,7 +24,8 @@ CSV.foreach(Rails.root.join('db', 'states.csv'), csv_options) do |row|
     early_voting: row['NCSL_Early_Voting'],
     voter_id: row['NCSL_VoterIDrequirements'],
     poll_book: row['Pew_E_Pollbooks'],
-    modem: row['Voting_Machine_Wireless_Modem'] == 'Y'
+    modem: row['Voting_Machine_Wireless_Modem'] == 'Y',
+    security_score_2: row['ITIF_Security_Combined'].to_int
   ) unless row['State'].nil?
 end
 

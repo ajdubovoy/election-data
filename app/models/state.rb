@@ -131,4 +131,12 @@ class State < ApplicationRecord
     when 'A' then 'Statewide'
     end
   end
+
+  def security_score_2_color
+    if self.security_score_color >= 176
+      return 'good'
+    else
+      return 'bad'
+    end
+  end
 end
