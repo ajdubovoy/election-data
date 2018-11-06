@@ -29,12 +29,14 @@
         </div>
         <div class="col-xs-12 col-sm-6 infodesc">
           <% if @county.tossies.length > 0 %>
-            <strong>Toss Up CD Numbers: </strong><%= @county.tossies.join(', ') %>
+            <% plural = @county.tossies.length > 1 ? 's' : '' %>
+            <strong>Toss Up CD Number<%= plural %>: </strong><%= @county.tossies.join(', ') %>
           <% end %>
         </div>
         <div class="col-xs-12 col-sm-6 infodesc">
           <% if @county.leanies.length > 0 %>
-            <strong>Lean CD Numbers: </strong><%= @county.leanies.join(', ') %>
+            <% plural = @county.tossies.length > 1 ? 's' : '' %>
+            <strong>Lean CD Number<%= plural %>: </strong><%= @county.leanies.join(', ') %>
           <% end %>
         </div>
       </div>
