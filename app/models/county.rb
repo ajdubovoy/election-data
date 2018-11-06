@@ -52,4 +52,20 @@ class County < ApplicationRecord
   def leanies
     self.leans.gsub(/[\[\]]/, '').split(', ').map { |cd| cd.to_i }
   end
+
+  def internet_ballots_pretty
+    case self.internet_ballots
+    when 'missing' then 'Not Reported'
+    when 'none' then 'Not Permitted'
+    else self.internet_ballots.to_i
+    end
+  end
+
+  def internet_ballots_color
+    case self.internet_ballots
+    when 'missing' then ''
+    when 'none' then ''
+    else 'bad'
+    end
+  end
 end
