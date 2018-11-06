@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_085602) do
+ActiveRecord::Schema.define(version: 2018_11_06_122348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2018_11_06_085602) do
     t.integer "population"
     t.integer "population_quartile"
     t.string "toss_up"
+    t.string "toss_ups"
+    t.string "leans"
     t.index ["state_id"], name: "index_counties_on_state_id"
   end
 

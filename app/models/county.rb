@@ -44,4 +44,12 @@ class County < ApplicationRecord
     when 4 then 'bad'
     end
   end
+
+  def tossies
+    self.toss_ups.gsub(/[\[\]]/, '').split(', ').map { |cd| cd.to_i }
+  end
+
+  def leanies
+    self.leans.gsub(/[\[\]]/, '').split(', ').map { |cd| cd.to_i }
+  end
 end

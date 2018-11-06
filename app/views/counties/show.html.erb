@@ -27,6 +27,16 @@
         <div class="col-xs-12 col-sm-6 infodesc">
           <span class="<%= @county.toss_up_color %>"><%= @county.toss_up_pretty %></span>
         </div>
+        <div class="col-xs-12 col-sm-6 infodesc">
+          <% if @county.tossies.length > 0 %>
+            <strong>Toss Up CD Numbers: </strong><%= @county.tossies.join(', ') %>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-6 infodesc">
+          <% if @county.leanies.length > 0 %>
+            <strong>Lean CD Numbers: </strong><%= @county.leanies.join(', ') %>
+          <% end %>
+        </div>
       </div>
 
       <div class="row">
