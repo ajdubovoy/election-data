@@ -115,4 +115,12 @@ class State < ApplicationRecord
     when 'N' then 'bad'
     end
   end
+
+  def voter_id_pretty
+    case self.voter_id
+    when 'N ' then 'None'
+    when 'NonPhotoID' then 'ID Required (but not photo ID)'
+    when 'PhotoID' then 'Photo ID Required'
+    end
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_055554) do
+ActiveRecord::Schema.define(version: 2018_11_06_062356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_055554) do
     t.string "registration_innovation"
     t.string "ease"
     t.string "early_voting"
+    t.string "voter_id"
   end
 
 end
