@@ -169,10 +169,10 @@
       <%= raw( '<div class="infosub col-xs-10 col-xs-offset-1">') unless @county.fips.to_s.slice(-3, 3) == '000' %>
       
         <div class="row">
-          <div class="col-xs-12 col-sm-6 infohead">
+          <div class="col-xs-8 col-sm-6 infohead">
             Number of counties
           </div>
-          <div class="col-xs-12 col-sm-6 infodesc">
+          <div class="col-xs-4 col-sm-6 infodesc">
             <%= @state.counties.length %>
           </div>
         </div>
@@ -196,10 +196,10 @@
         </div>
       
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Voter Registration Security Score
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <span class="<%= @state.security_score_color %>">
               <%= @state.security_score %>
             </span>
@@ -207,10 +207,10 @@
         </div>
       
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Online Voter Registration
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <span class="<%= @state.online_registration_color %>">
               <%= @state.online_registration_pretty %>
             </span>
@@ -218,10 +218,10 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Obtained DHS Security Assistance
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <span class="<%= @state.dhs_assessment_color %>">
               <%= @state.dhs_assessment_pretty %>
             </span>
@@ -229,19 +229,19 @@
         </div>
 
          <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Voter Registration
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <%= @state.registration_innovation_pretty %>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Ease of Voting Rank (COVI)
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <span class="<%= @state.ease_color %>">
               <%= @state.ease %>
             </span>
@@ -249,10 +249,10 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Early Voting?
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <span class="<%= @state.early_voting_color %>">
               <%= @state.early_voting_pretty %>
             </span>
@@ -260,37 +260,37 @@
         </div>
 
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Voter ID Requirements
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <%= @state.voter_id_pretty %>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Electronic Poll Books
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <%= @state.poll_book_pretty %>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
             Voting Machine Wireless Modem
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <%= @state.modem ? 'Yes' : 'No' %>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
+          <div class="col-xs-12 col-sm-6 infohead">
              Web Security Score
           </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
+          <div class="col-xs-12 col-sm-6 infodesc">
             <span class="<%= @state.security_score_2_color %>">
               <%= @state.security_score_2 %>
             </span>
