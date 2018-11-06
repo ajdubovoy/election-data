@@ -21,15 +21,6 @@
       </div>
 
       <div class="row">
-        <div class="col-xs-8 col-sm-6 infohead">
-          Population Quartile
-        </div>
-        <div class="col-xs-4 col-sm-6 infodesc">
-          <%= @county.population_quartile %>
-        </div>
-      </div>
-
-      <div class="row">
         <div class="col-xs-12 col-sm-6 infohead">
           Congressional Toss Up?
         </div>
@@ -117,6 +108,41 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-xs-12 infohead infosubtitle">
+          <span>
+            County Risk Factors
+          </span>
+        </div>
+        
+        <div class="infosub col-xs-10 col-xs-offset-1">
+
+        <div class="row">
+          <div class="col-xs-10 col-sm-6 infohead">
+            Population Quartile
+          </div>
+          <div class="col-xs-2 col-sm-6 infodesc">
+            <span class="<%= @county.population_quartile_color %>">
+              <%= @county.population_quartile %>
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-10 col-sm-6 infohead">
+            HAVA 2018 Cyber-Security Funds?
+          </div>
+          <div class="col-xs-2 col-sm-6 infodesc">
+            <span class="<%= @state.hava_color %>">
+              <%= @state.hava %>
+            </span>
+          </div>
+        </div>
+      
+      </div>
+
+        </div>
+
   <% end %>
 
     <div class="row">
@@ -139,15 +165,6 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 infohead">
-            HAVA Cybersecurity Funds Quartile
-          </div>
-          <div class="col-xs-12 col-sm-6 infodesc">
-            <%= @state.hava %>
-          </div>
-        </div>
-      
       <div class="row">
         <div class="col-xs-8 col-sm-6 infohead">
           Population

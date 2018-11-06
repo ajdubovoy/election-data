@@ -35,4 +35,13 @@ class County < ApplicationRecord
     when 'N' then 'bad'
     end
   end
+
+  def population_quartile_color
+    case self.population_quartile
+    when 1 then 'good'
+    when 2 then 'amb'
+    when 3 then 'amb'
+    when 4 then 'bad'
+    end
+  end
 end
