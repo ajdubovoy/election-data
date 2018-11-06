@@ -30,9 +30,9 @@ class County < ApplicationRecord
 
   def toss_up_color
     case self.toss_up
-    when 'Y' then 'good'
+    when 'Y' then 'bad'
     when 'L' then 'amb'
-    when 'N' then 'bad'
+    when 'N' then ''
     end
   end
 

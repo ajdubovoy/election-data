@@ -28,9 +28,9 @@ class State < ApplicationRecord
 
   def toss_up_color
     case self.toss_up
-    when 'T' then 'good'
+    when 'T' then 'bad'
     when 'L' then 'amb'
-    when 'N' then 'bad'
+    when 'N' then ''
     end
   end
 
@@ -50,6 +50,20 @@ class State < ApplicationRecord
     when 2 then 'amb'
     when 3 then 'amb'
     when 4 then 'bad'
+    end
+  end
+
+  def online_registration_pretty
+    case self.online_registration
+    when true then 'Yes'
+    when false then 'No'
+    end
+  end
+
+  def online_registration_color
+    case self.online_registration
+    when true then 'good'
+    when false then 'amb'
     end
   end
 end

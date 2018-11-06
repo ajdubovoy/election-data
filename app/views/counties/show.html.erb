@@ -55,8 +55,8 @@
               <span class="<%= @state.audit_status_color %>"><%= @state.audit_status_pretty %></span>
             </div>
           </div>
-
         </div>
+      </div>
 
       <div class="row">
         <div class="col-xs-12 infohead infosubtitle">
@@ -76,17 +76,6 @@
 
           <% else %>
 
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 infohead">
-                Equipment Age
-              </div>
-              <div class="col-xs-12 col-sm-6 infodesc">
-                <%= "Up to #{ @county.equipment_age } years" %>
-              </div>
-            </div>
-
-            <hr>
-
             <% @machines.each do |machine| %>
 
               <div class="row">
@@ -102,6 +91,17 @@
               </div>
 
             <% end %>
+
+            <hr>
+            
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 infohead">
+                Equipment Age
+              </div>
+              <div class="col-xs-12 col-sm-6 infodesc">
+                <%= "Up to #{ @county.equipment_age } years" %>
+              </div>
+            </div>
 
           <% end %>
 
@@ -138,18 +138,7 @@
             </span>
           </div>
         </div>
-      
-        <div class="row">
-          <div class="col-xs-10 col-sm-6 infohead">
-            Voter Registration Security Score
-          </div>
-          <div class="col-xs-2 col-sm-6 infodesc">
-            <span class="<%= @state.security_score_color %>">
-              <%= @state.security_score %>
-            </span>
-          </div>
-        </div>
-      
+
       </div>
 
         </div>
@@ -192,8 +181,30 @@
           <div class="col-xs-12 col-sm-6 infodesc">
             <span class="<%= @state.toss_up_color %>"><%= @state.toss_up_pretty %></span>
           </div>
-      
         </div>
+      
+        <div class="row">
+          <div class="col-xs-10 col-sm-6 infohead">
+            Voter Registration Security Score
+          </div>
+          <div class="col-xs-2 col-sm-6 infodesc">
+            <span class="<%= @state.security_score_color %>">
+              <%= @state.security_score %>
+            </span>
+          </div>
+        </div>
+      
+        <div class="row">
+          <div class="col-xs-10 col-sm-6 infohead">
+            Online Voter Registration
+          </div>
+          <div class="col-xs-2 col-sm-6 infodesc">
+            <span class="<%= @state.online_registration_color %>">
+              <%= @state.online_registration_pretty %>
+            </span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
