@@ -80,4 +80,15 @@ class State < ApplicationRecord
     when false then 'amb'
     end
   end
+
+  def registration_innovation_pretty
+    case self.registration_innovation
+    when nil then 'Traditional Only'
+    when '' then 'Traditional Only'
+    when 'Automatic' then 'Automatic'
+    when 'SameDay' then 'Same Day'
+    when 'EarlyVoteOnly' then 'Early Vote Only'
+    when 'NoVR' then 'Not Required'
+    end
+  end
 end
