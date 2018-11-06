@@ -19,7 +19,8 @@ CSV.foreach(Rails.root.join('db', 'states.csv'), csv_options) do |row|
     security_score: row['CAP_VR_Score'].to_i,
     online_registration: row['NCSL_Online_Registration'] == 'Y',
     dhs_assessment: row['DHS_Security_Assessment'] == 'Y',
-    registration_innovation: row['NCSL_Registration_Innovation']
+    registration_innovation: row['NCSL_Registration_Innovation'],
+    ease: row['DD_COVI_Bin'],
   ) unless row['State'].nil?
 end
 

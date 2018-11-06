@@ -91,4 +91,12 @@ class State < ApplicationRecord
     when 'NoVR' then 'Not Required'
     end
   end
+
+  def ease_color
+    case self.ease
+    when 'A' then 'good'
+    when 'B' then 'amb'
+    when 'C' then 'bad'
+    end
+  end
 end

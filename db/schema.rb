@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_052225) do
+ActiveRecord::Schema.define(version: 2018_11_06_055010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_052225) do
     t.boolean "online_registration"
     t.boolean "dhs_assessment"
     t.string "registration_innovation"
+    t.string "ease"
   end
 
 end
