@@ -133,7 +133,7 @@ class State < ApplicationRecord
   end
 
   def security_score_2_color
-    if self.security_score_color >= 176
+    if self.security_score_2 >= 176
       return 'good'
     else
       return 'bad'
