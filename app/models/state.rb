@@ -99,4 +99,20 @@ class State < ApplicationRecord
     when 'C' then 'bad'
     end
   end
+
+  def early_voting_pretty
+    case self.early_voting
+    when 'Y' then 'Yes'
+    when 'AllMail' then 'All-Mail Voting'
+    when 'N' then 'No'
+    end
+  end
+
+  def early_voting_color
+    case self.early_voting
+    when 'Y' then 'good'
+    when 'AllMail' then 'amb'
+    when 'N' then 'bad'
+    end
+  end
 end
