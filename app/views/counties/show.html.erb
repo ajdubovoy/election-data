@@ -166,6 +166,54 @@
           </div>
         </div>
 
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 infohead">
+            2016 Registered Voters
+          </div>
+          <div class="col-xs-12 col-sm-6 infodesc">
+            <%= @county.registered_voters.nil? ? 'No Data' : @county.registered_voters %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 infohead">
+            2016 Canceled Registrations
+          </div>
+          <div class="col-xs-12 col-sm-6 infodesc">
+            <%= @county.canceled_registrations.nil? ? 'No Data' : @county.canceled_registrations %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 infohead">
+            2016 Canceled "Other"
+          </div>
+          <div class="col-xs-12 col-sm-6 infodesc">
+            <strong>Number: </strong><%= @county.canceled_other.nil? ? 'No Data' : @county.canceled_other %>
+          </div>
+          <div class="col-xs-12 col-sm-6 infodesc">
+            <strong>Percentage: </strong><%= @county.canceled_other_percent.nil? ? 'No Data' : @county.canceled_other_percent %>%
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 infohead">
+            2016 Ballots Rejected
+          </div>
+          <div class="col-xs-12 col-sm-6 infodesc">
+            <%= @county.rejected.nil? ? 'No Data' : @county.rejected %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 infohead">
+            2016 Rejected "Other"
+          </div>
+          <div class="col-xs-12 col-sm-6 infodesc">
+            <%= @county.rejected_other.nil? ? 'No Data' : @county.rejected_other %>
+          </div>
+        </div>
+
       </div>
 
         </div>
