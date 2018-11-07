@@ -192,7 +192,7 @@
             <strong>Number: </strong><%= @county.canceled_other.nil? ? 'No Data' : @county.canceled_other %>
           </div>
           <div class="col-xs-12 col-sm-6 infodesc">
-            <strong>Percentage: </strong><%= @county.canceled_other_percent.nil? ? 'No Data' : @county.canceled_other_percent %>%
+            <strong>Percentage: </strong><%= @county.canceled_other_percent.nil? ? 'No Data' : "#{ @county.canceled_other_percent }%" %>
           </div>
         </div>
 
