@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_131443) do
+ActiveRecord::Schema.define(version: 2018_11_07_023309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 2018_11_06_131443) do
     t.string "toss_ups"
     t.string "leans"
     t.string "internet_ballots"
+    t.integer "registered_voters"
+    t.integer "canceled_registrations"
+    t.integer "canceled_other"
+    t.integer "canceled_other_percent"
+    t.integer "rejected"
+    t.integer "rejected_other"
     t.index ["state_id"], name: "index_counties_on_state_id"
   end
 
