@@ -63,7 +63,7 @@ CSV.foreach(Rails.root.join('db', 'eavs.csv'), csv_options) do |row|
     selected.registered_voters = row['EAVS Registered Voters Total'].to_i
     selected.canceled_registrations = row['EAVS_2016_Voters_Removed_Total'].to_i
     selected.canceled_other = row['EAVS_2016_Voters_Removed_Other'].to_i
-    selected.canceled_other_percent = (row['DD_EAVS_2016_Voters_Removed_Other_Percent_By_Total_Registration'] * 100).to_i
+    selected.canceled_other_percent = (row['DD_EAVS_2016_Voters_Removed_Other_Percent_By_Total_Registration'].to_f * 100.0).round(2)
     selected.rejected = row['EAVS_Ballots_Absentee_Provisional_Total_Not_Counted'].to_i
     selected.rejected_other = row['EAVS_Ballots_Absentee_Provisional_Total_Not_Counted_Other'].to_i
     selected.save!
